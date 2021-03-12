@@ -1,0 +1,5 @@
+.*
+gradle
+Dockerfile
+gradle.sh
+Makefile
