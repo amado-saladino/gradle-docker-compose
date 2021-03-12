@@ -20,3 +20,7 @@ The above command might slightly differ depending on the directory name, the con
 `docker start $(DIR_NAME)_$(SERVICE_NAME)_1`
 
 it will rerun the tests and create the report, the report will automatically be copied to `output` folder where it is volumized to `public` folder in the other container which is charged of displaying the test result.
+
+## Run the test
+
+`make test`
