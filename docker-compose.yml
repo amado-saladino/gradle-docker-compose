@@ -14,3 +14,9 @@ services:
     volumes:
       - ./test-project:/app
       - ./web/public:/app/output
+  gallery:
+    image: ghcr.io/linuxserver/photoshow
+    ports:
+      - "81:80"
+    volumes:
+      - ./test-project/screenshots:/Pictures:ro    
