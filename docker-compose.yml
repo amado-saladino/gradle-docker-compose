@@ -1,22 +1,24 @@
 version: '3'
 services:
   web:
-    build:
-      context: ./web
+    image: nginx:1.14
     ports: 
-      - "3000:3000"
+      - "3000:80"
     volumes:
-      - /app/node_modules
-      - ./web:/app
+      - gradle-report:/usr/share/nginx/html
   test:
-    build:
-      context: ./test-project
+    image: amadosaladino/selenium-gradle
     volumes:
       - ./test-project:/app
-      - ./web/public:/app/output
+      - gradle-report:/report
+      - gradle-repo:/root/.gradle/caches/modules-2/files-2.1
   gallery:
     image: ghcr.io/linuxserver/photoshow
     ports:
-      - "81:80"
+      - "8000:80"
     volumes:
-      - ./test-project/screenshots:/Pictures:ro    
+      - ./test-project/screenshots:/Pictures:ro
+
+volumes:
+  gradle-repo:
+  gradle-report:

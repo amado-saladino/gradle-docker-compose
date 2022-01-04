@@ -11,7 +11,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.seleniumhq.selenium:selenium-java:4.0.0-alpha-6'
+    implementation 'org.seleniumhq.selenium:selenium-java:4.1.1'
     implementation 'com.github.amado-saladino:excelizer:1.2.0'
     implementation 'com.google.guava:guava:29.0-jre'
     testImplementation 'org.testng:testng:7.3.0'
@@ -21,9 +21,4 @@ dependencies {
 
 test {
     useTestNG()
-}
-
-task publish(type: Copy) {
-    from 'build/reports/tests/test/'
-    into 'output'
 }

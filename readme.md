@@ -5,26 +5,24 @@ Gradle test project with reports automatically published in React-based web page
 
 ## How to Run
 
-Run the command `docker-compose up -d`
+Run the command:
 
-## Update tests
+```
+docker-compose up -d
+# or
+make start
+```
+
+## Regression tests
 
 Tests can be easily updated or added, just add your java classes or make any changes with the codebase, run test container once more
 
-`docker start gradlereact_test_1`
-
-## Container name format
-
-The above command might slightly differ depending on the directory name, the container for running the tests will have this format
-
-`docker start $(DIR_NAME)_$(SERVICE_NAME)_1`
-
-it will rerun the tests and create the report, the report will automatically be copied to `output` folder where it is volumized to `public` folder in the other container which is charged of displaying the test result.
+```
+docker start test
+# or
+make test
+```
 
 ## Screenshot viewer
 
-A container for browsing the screenshots taken durin test run. This gallery is available at `http://<HOST-IP>:81`
-
-## Run the test
-
-`make test`
+A container for browsing the screenshots taken durin test run. This gallery is available at `http://<HOST-IP>:8000`
