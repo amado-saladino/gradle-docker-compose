@@ -25,4 +25,4 @@ make test
 
 ## Screenshot viewer
 
-A container for browsing the screenshots taken durin test run. This gallery is available at `http://<HOST-IP>:8000`
+A container for browsing the screenshots taken during test run. This gallery is available at `http://<HOST-IP>:8000`
